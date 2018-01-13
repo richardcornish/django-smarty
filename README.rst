@@ -42,3 +42,28 @@ Result:
 .. code-block:: html
 
    &#8220;Hello&#8212;world!&#8221;
+
+Settings
+========
+
+``smarty`` is a filter composed of several smaller filters:
+
+- ``smartypants`` is the original SmartyPants
+- ``smartycaps`` wraps capital letters in ``<span class="initialism"></span>``
+
+One can apply any filter individually. For example, if one preferred the original SmartyPants, write ``{{ post.body|smartypants }}``.
+
+One can customize the application and order of ``smarty`` filters with the ``SMARTY_FILTERS`` setting. By default, the ``SMARTY_FILTERS`` setting is:
+
+.. code-block:: python
+
+   SMARTY_FILTERS = [
+       'smartypants',
+       'smartycaps',
+   ]
+
+One can also customize the HTML class of ``smartycaps`` with the ``SMARTY_CAPS_CLASS`` setting. By default, the ``SMARTY_CAPS_CLASS`` setting is:
+
+.. code-block:: python
+
+   SMARTY_CAPS_CLASS = 'initialism'
