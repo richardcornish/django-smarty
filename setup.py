@@ -5,7 +5,7 @@ from setuptools import find_packages, setup
 
 setup(
     name='django-smarty',
-    version='0.1.0',
+    version='0.1.1',
     description='A Django template filter to convert ASCII punctuation into typographic punctuation HTML entities.',
     long_description=open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'README.rst')).read(),
     author='Richard Cornish',
