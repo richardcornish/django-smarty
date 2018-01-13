@@ -1,7 +1,7 @@
 Django Smarty
 *************
 
-|PyPI version|_ |Build status|_
+|PyPI version|_
 
 .. |PyPI version| image::
    https://badge.fury.io/py/django-smarty.svg
