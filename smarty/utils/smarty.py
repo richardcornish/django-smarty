@@ -2,8 +2,6 @@ from __future__ import unicode_literals
 
 import re
 
-from django.conf import settings
-
 from smartypants import _tags_to_skip_regex, _tokenize, smartypants as _smartypants
 
 from .. import settings
@@ -18,14 +16,14 @@ def smartycaps(text):
     result = []
     in_pre = False
     tags_to_skip_regex = _tags_to_skip_regex()
-    caps_re = re.compile(r'((\S*)[A-Z](\S*)){2,}')
+    caps_re = re.compile(r'[0-9]*([A-Z][0-9\/\-.+&]?){1,}[A-Z][0-9]*\.?')
     for cur_token in tokens:
-        if not cur_token[0] == "tag":
+        if not cur_token[0] == 'tag':
             t = cur_token[1]
             if not in_pre:
                 t = re.sub(caps_re, _wrap_caps, t)
             result.append(t)
-    return "".join(result)
+    return ''.join(result)
 
 
 def smartypants(value):
